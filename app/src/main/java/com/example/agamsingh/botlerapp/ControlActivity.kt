@@ -36,6 +36,14 @@ class ControlActivity : AppCompatActivity() {
             moving.visibility = View.VISIBLE
             moving.text = "Botler moving up \n" + "Sending W to bluetooth"
         }
+
+        brake.setOnClickListener{
+            moving.visibility = View.VISIBLE
+            moving.text = "BREAK!!! \n" + "Sending B to bluetooth"
+        }
+
+
+
     }
 
 }

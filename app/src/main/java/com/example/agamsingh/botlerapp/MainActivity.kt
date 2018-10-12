@@ -12,13 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        start_button.setOnClickListener(object: View.OnClickListener {
-            override fun onClick(view: View): Unit {
-                // Handler code here.
-                val intent = Intent(this@MainActivity, ControlActivity::class.java)
-                startActivity(intent)
-            }
-        })
+        start_button.setOnClickListener {
+            val intent = Intent(this@MainActivity, ControlActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
