@@ -16,25 +16,25 @@ class ControlActivity : AppCompatActivity() {
 
         right_arrow.setOnClickListener {
             moving.visibility = View.VISIBLE
-            moving.text = "Botler moving right"
+            moving.text = "Botler moving right \n" + "Sending D to bluetooth"
         }
 
 
         left_arrow.setOnClickListener {
             moving.visibility = View.VISIBLE
-            moving.text = "Botler moving left"
+            moving.text = "Botler moving left \n" +  "Sending A to bluetooth"
         }
 
 
         down_arrow.setOnClickListener {
             moving.visibility = View.VISIBLE
-            moving.text = "Botler moving down"
+            moving.text = "Botler moving down \n" + "Sending S to bluetooth"
         }
 
 
         up_arrow.setOnClickListener {
             moving.visibility = View.VISIBLE
-            moving.text = "Botler moving up"
+            moving.text = "Botler moving up \n" + "Sending W to bluetooth"
         }
     }
 
