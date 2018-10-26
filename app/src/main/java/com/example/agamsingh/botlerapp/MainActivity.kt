@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         start_button.setOnClickListener {
-            val intent = Intent(this@MainActivity, ControlActivity::class.java)
+            val intent = Intent(this@MainActivity, BluetoothActivity::class.java)
             startActivity(intent)
         }
 
