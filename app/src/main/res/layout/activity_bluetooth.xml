@@ -13,91 +13,130 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
-            android:layout_width="242dp"
-            android:layout_height="106dp">
+            android:layout_width="match_parent"
+            android:layout_height="206dp">
 
             <Button
                 android:id="@+id/brake"
-                android:layout_width="52dp"
-                android:layout_height="34dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="112dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@color/colorPrimary"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorAccent"
                 android:text="brake"
+                android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.139"
+                app:layout_constraintHorizontal_bias="0.034"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/right_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+            <Button
+                android:id="@+id/manual"
+                android:layout_width="112dp"
+                android:layout_height="44dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/arrow_right_thick"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/brake"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/left_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="36dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginStart="120dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/arrow_left_thick"
+                android:layout_marginBottom="8dp"
+                android:background="#9e9e9e"
+                android:text="Manual"
+                android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.035"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.937" />
+                app:layout_constraintVertical_bias="0.054" />
+
+            <Button
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="#9e9e9e"
+                android:padding="8dp"
+                android:text="Autonomous"
+                android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.035"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.943" />
+
+            <ImageButton
+                android:id="@+id/right_arrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_right_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.936"
+                app:layout_constraintStart_toEndOf="@+id/brake"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/left_arrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="36dp"
+                android:background="@drawable/ic_left_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.348"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.616" />
 
             <ImageButton
                 android:id="@+id/down_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="72dp"
-                android:background="@drawable/arrow_down_thick"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_down_arrow"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.788"
+                app:layout_constraintHorizontal_bias="0.79"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.677" />
 
             <ImageButton
                 android:id="@+id/up_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/arrow_up_thick"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_up_arrow"
                 app:layout_constraintBottom_toTopOf="@+id/down_arrow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.79"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.34" />
         </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
@@ -123,7 +162,7 @@
                 android:layout_weight="0.9"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="" />
+                android:text=" " />
         </LinearLayout>
 
         <LinearLayout
@@ -144,7 +183,6 @@
                 android:id="@+id/bluetoothStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_alignTop="@+id/checkboxLED1"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="0.9"
@@ -159,6 +197,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toStartOf="@+id/off"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="#fff"
             android:text="Bluetooth ON" />
 
         <Button
@@ -168,6 +208,9 @@
             android:layout_alignBottom="@+id/scan"
             android:layout_toEndOf="@+id/PairedBtn"
             android:layout_toRightOf="@+id/PairedBtn"
+            android:textColor="#fff"
+            android:backgroundTint="@color/colorAccent"
+
             android:text="Bluetooth OFF" />
 
         <Button
@@ -176,6 +219,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/scan"
             android:layout_toStartOf="@+id/discover"
+            android:textColor="#fff"
+            android:backgroundTint="@color/colorAccent"
             android:text="Show paired Devices" />
 
         <Button
@@ -185,6 +230,8 @@
             android:layout_below="@+id/off"
             android:layout_toEndOf="@+id/checkboxLED1"
             android:layout_toRightOf="@+id/checkboxLED1"
+            android:textColor="#fff"
+            android:backgroundTint="@color/colorAccent"
             android:text="Discover New Devices" />
 
         <ListView

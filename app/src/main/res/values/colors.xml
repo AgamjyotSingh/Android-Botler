@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ff6666</color>
-    <color name="colorPrimaryDark">#db6969</color>
-    <color name="colorAccent">#efef64</color>
+
+    //Blue Part
+    <color name="colorPrimary">#2D4571</color>
+    <color name="colorPrimaryDark">#152C55</color>
+    <color name="colorAccent">#4D648D</color>
+
+
+    //Purple Part
+    <color name="colorPrimaryPurple">#3E3175</color>
+    <color name="colorPrimaryPurpleDark">#241858</color>
+    <color name="colorPrimaryPurpleLight">#5F5293</color>
+
+
+    //Green Part
+    <color name="colorPrimaryGreen">#236A62</color>
+    <color name="colorPrimaryGreenDark">#00352F</color>
+    <color name="colorPrimaryGreenLight">#42847D</color>
+
+
 </resources>

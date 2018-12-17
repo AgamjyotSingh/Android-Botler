@@ -8,9 +8,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.os.Vibrator;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -48,10 +51,14 @@ public class BluetoothActivity extends AppCompatActivity {
     private ImageButton downArrow;
     private ImageButton upArrow;
     private Button brake;
+    private Button manual;
+    private Button autonomous;
+
+    private Vibrator mVibrator;
 
     private Handler mHandler; // Our main handler that will receive callback notifications
     private ConnectedThread mConnectedThread; // bluetooth background worker thread to send and receive data
-    private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
+    private BluetoothSocket mBTSocket = null;
 
     private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
 
@@ -80,6 +87,10 @@ public class BluetoothActivity extends AppCompatActivity {
         downArrow = (ImageButton)findViewById(R.id.down_arrow);
         brake = (Button)findViewById(R.id.brake);
 
+        autonomous = (Button)findViewById(R.id.auto);
+        manual = (Button)findViewById(R.id.manual);
+
+
         mBTArrayAdapter = new ArrayAdapter<String>(this , android.R.layout.simple_list_item_1);
         mBTAdapter = BluetoothAdapter.getDefaultAdapter(); // get a handle on the bluetooth radio
 
@@ -87,7 +98,7 @@ public class BluetoothActivity extends AppCompatActivity {
         mDevicesListView.setAdapter(mBTArrayAdapter); // assign model to view
         mDevicesListView.setOnItemClickListener(mDeviceClickListener);
 
-
+        mVibrator = (Vibrator) this.getSystemService(VIBRATOR_SERVICE);
 
 
         mHandler = new Handler(){
@@ -124,6 +135,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("d");
+                    mVibrator.vibrate(50);
                 }
                 });
 
@@ -133,6 +145,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("a");
+                    mVibrator.vibrate(50);
                 }
             });
 
@@ -141,6 +154,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("w");
+                    mVibrator.vibrate(50);
                 }
             });
 
@@ -149,6 +163,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("s");
+                    mVibrator.vibrate(50);
                 }
             });
 
@@ -158,13 +173,33 @@ public class BluetoothActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("b");
+                    mVibrator.vibrate(50);
+
                 }
             });
 
+            autonomous.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mConnectedThread != null)
+                        mConnectedThread.write("p");
+                    mVibrator.vibrate(50);
+                    autonomous.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    manual.setBackgroundColor(Color.parseColor("#9e9e9e"));
+                }
+            });
 
+            manual.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    if(mConnectedThread != null)
+                        mConnectedThread.write("m");
+                    mVibrator.vibrate(50);
+                    manual.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorAccent));
+                    autonomous.setBackgroundColor(Color.parseColor("#9e9e9e"));
 
-
-
+                }
+            });
 
             mScanBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -314,7 +349,6 @@ public class BluetoothActivity extends AppCompatActivity {
                             mHandler.obtainMessage(CONNECTING_STATUS, -1, -1)
                                     .sendToTarget();
                         } catch (IOException e2) {
-                            //insert code to deal with this
                             Toast.makeText(getBaseContext(), "Socket creation failed", Toast.LENGTH_SHORT).show();
                         }
                     }
